@@ -1,0 +1,12 @@
+.user-pro{
+    width: 100%;
+}
+.user-pro img{
+    width: 80px;
+    border-radius: 80px;
+}
+
+.user-pro .btn{
+    padding: 4px 7px;
+    margin-top: 10px;
+}

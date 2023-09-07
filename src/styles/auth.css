@@ -1,0 +1,110 @@
+.form-block{
+    width: 600px;
+    box-shadow: 0px 0px 15px 0px rgb(184, 184, 184);
+    margin: 30px auto;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.log{
+    width: 500px;
+    margin-top: 150px;
+}
+form input{
+    width: 300px;
+    height: 30px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(151, 151, 151);
+    padding-left: 5px;
+    font-size: 15px;
+    border-radius: 3px;
+}
+
+form input:focus{
+    outline: none;
+    border-color: blue;
+    color: blue;
+}
+form label{
+    margin-bottom: 10px;
+    color: rgb(89, 19, 180);
+}
+
+.btn{
+    width:fit-content;
+    padding: 5px 20px;
+    color: white;
+    border-radius: 5px;
+    margin: 10px auto;
+    font-weight: bold;
+    transition: 0.7s;
+}
+
+.btn:hover{
+    background-color: rgb(52, 52, 255);
+}
+textarea{
+    height: 100px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(151, 151, 151);
+    padding-left: 5px;
+    font-size: 15px;
+    border-radius: 3px;
+}
+
+textarea:focus{
+    outline: none;
+    border-color: blue;
+    color: blue;
+}
+
+.title{
+    width: 450px;
+}
+
+.file{
+    border: none;
+}
+
+.num{
+    width: 200px;
+}
+select{
+    height: 30px;
+    padding-left: 5px;
+}
+
+.radio label{
+    margin-top: 3px;
+    color: black;
+}
+
+input[type="radio"]{
+    color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#del{
+    background-color: rgb(255, 65, 65);
+    transition: 0.6s;
+}
+#del:hover{
+    background-color: rgb(241, 72, 72);
+}
+@media (max-width:605px){
+    .form-block{
+        width: 400px;
+    }
+}
+
+@media (max-width:400px){
+    .form-block{
+        width: 300px;
+    }
+    form input{
+        width: 280px;
+    }
+}

@@ -1,0 +1,27 @@
+nav{
+    border-bottom: 1px solid rgb(181, 203, 250);
+}
+
+.logo{
+    color: rgb(65, 68, 236);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.menu a{
+    text-decoration: none;
+    margin-right: 20px;
+    color: black;
+}
+
+a:hover{
+    color: blue;
+}
+
+.block{
+    width: 80%;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

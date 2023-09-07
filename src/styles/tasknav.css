@@ -1,0 +1,49 @@
+.task-section{
+    height: 80px;
+    width: 100%;
+    border-bottom: 1px solid rgb(179, 193, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 30px;
+}
+.filter{
+    width: 200px;
+}
+.pro-section img{
+    width: 50px;
+    border-radius: 80px;
+}
+
+.src-team{
+    width: 250px;
+    border: 1px solid rgb(146, 146, 146);
+    border-left: none;
+    border-radius:0px 15px 15px 0px;
+    height: 40px;
+    padding-left: 10px;
+}
+
+.src-team:focus{
+    outline: none;
+    color: blue;
+    border-color: rgb(88, 88, 255);
+}
+
+.src-icon{
+    margin-left: 30px;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(146, 146, 146);
+    border-radius:15px 0px 0px 15px;
+    border-right: none;
+}
+
+.btn{
+    width: fit-content;
+    background-color: rgb(87, 87, 255);
+    padding:10px 20px;
+}
