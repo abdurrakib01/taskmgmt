@@ -22,7 +22,7 @@ export default function Profile(){
                 </Drawer>
 
                 <div className="info flex">
-                    <span class="material-symbols-outlined src-icon">search</span>
+                    <span className="material-symbols-outlined src-icon">search</span>
                     <input className="src-team" type="text" placeholder="search team"/>
                 </div>
             </div>

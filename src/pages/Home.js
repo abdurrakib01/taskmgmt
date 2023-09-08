@@ -1,38 +1,26 @@
 import Profile from "../components/Profile";
 import Teams from "../components/Teams";
 import "../styles/home.css";
-import TaskNav from "../components/TaskNav";
-import Task from "../components/Task";
-
+import { useState } from "react";
+import TeamTask from "../components/TeamTask";
 
 export default function Home(){
+    const [listView, setListView] = useState(false)
+    const handleTeamClick=()=>{
+        console.log("hii");
+        setListView(true);
+    }
     return(
-        <div className="flex">
+        <div className="flex justify-center items-center">
             <div className="team-section">
                 <Profile/>
                 <div className="team-list">
-                    <Teams/>
-                    <Teams/>
-                    <Teams/>
-                    <Teams/>
-                    <Teams/>
-                    <Teams/>
-                    <Teams/>
-                    <Teams/>
-                    <Teams/>
-                    <Teams/>
+                    <Teams onClickHandler={handleTeamClick}/>
                 </div>
             </div>
-            <div className="task-content">
-                <TaskNav/>
-                <div className="task-list">
-                    <Task/>
-                    <Task/>
-                    <Task/>
-                    <Task/>
-                    <Task/>
-                </div>
-            </div>
+            {listView?
+                <TeamTask/>
+            :<div className="w-full flex justify-center"><p className="team-msg">Select a Team to Collaborate</p></div>}
         </div>
     )
 }
