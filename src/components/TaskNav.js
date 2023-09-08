@@ -4,13 +4,17 @@ import { Modal } from "antd";
 import AddTask from "./AddTask";
 
 
-export default function TaskNav(){
+export default function TaskNav(props){
     const [visible, setVisible] = useState(false)
+    const handleClick=()=>{
+        setVisible(false);
+        props.fetch();
+    }
     return(
         <div className="task-section">
             <div className="ml-8">
-                <p className="font-bold">Code Crusaders</p>
-                <p className="text-sm">Total Members: 6</p>
+                <p className="font-bold">{props.team.name}</p>
+                <p className="text-sm">Total Members: {props.team.teams.length}</p>
             </div>
             <div>
                 <button onClick={()=>{setVisible(true)}} className="btn">+ Add Task</button>
@@ -20,7 +24,7 @@ export default function TaskNav(){
                     onCancel={()=>{setVisible(false)}}
                     footer={null}
                 >
-                <AddTask/>
+                <AddTask team={props.team} visible={handleClick}/>
                 </Modal>
             </div>
             <div className="filter flex">

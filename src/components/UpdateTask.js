@@ -37,7 +37,7 @@ export default function UpdateTask(){
                 <label for="pen"> Pending</label>
             </div>
             <div className="flex justify-between">
-            <button type="submit" className="btn ">Add Task</button>
+            <button type="submit" className="btn ">Update Task</button>
             <button type="submit" className="btn" id="del">Delete Task</button>
             </div>
         </form>
