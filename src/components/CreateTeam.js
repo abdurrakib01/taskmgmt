@@ -1,27 +1,79 @@
+import { useState, useEffect } from "react";
 import "../styles/auth.css";
 import { Select } from "antd";
-
+import axios from "axios";
+import { getToken } from "../db/LocalStorageService";
+import { ColorFactory } from "antd/es/color-picker/color";
 
 export default function EditProfile(){
+    const [userList, setUserList] = useState([])
+    const [team, setTeam] = useState({
+        name : "",
+        teams : null,
+    })
+    const {access_token} = getToken()
+    var fetching=()=>{
+        axios.get('http://127.0.0.1:8000/api/user/userlist/',{
+            headers: {
+                'Content-Type': "application/json",
+                'authorization' : `Bearer ${access_token}`,
+            },
+        }).then(res=>{
+            setUserList(res.data)
+        }).catch(err=>{
+            console.log(err.response.data)
+        });
+    }
+    useEffect (()=>{
+        fetching();
+    },[]);
     const { Option } = Select;
     const handleChange = (values) => {
-        // Handle the selected values here
-        console.log('Selected values:', values);
-      };
+        setTeam({
+            ...team,
+            teams:values
+        })
+    };
+    const handleNameChange = (e) => {
+        setTeam({
+            ...team,
+            name : e.target.value
+        })
+    };
+
+    const handleSubmit=async (e)=>{
+        e.preventDefault()
+        const data = {
+            name : team.name,
+            teams : team.teams,
+        }
+        await axios.post('http://127.0.0.1:8000/teams/', data, {
+            headers: {
+                'content-Type': "application/json",
+                'authorization' : `Bearer ${access_token}`,
+            },
+        }).then(res=>{
+            window.location.reload();
+        }).catch(err=>{
+            console.log(err)
+        })
+    }
     return(
-        <form className="flex flex-col mx-auto">
+        <form className="flex flex-col mx-auto" onSubmit={handleSubmit}>
             <label for="name">Team Name:</label>
-            <input type="text" className="title" placeholder="team name" name="name"/>
+            <input type="text" className="title" placeholder="team name" name="name"
+            onChange={handleNameChange}
+            value={team.name}/>
             <label for="member">Team Members</label>
             <Select
                 mode="multiple"
                 style={{ width: '100%' }}
                 placeholder="Select items"
                 onChange={handleChange}
-            >
-                <Option value="option1">Option 1</Option>
-                <Option value="option2">Option 2</Option>
-                <Option value="option3">Option 3</Option>
+            >   
+                {userList.map((value, index)=>(
+                    <Option key={index} value={value.id}>{value.username}</Option>
+                ))}
             </Select>
             <button type="submit" className="btn bg-blue-500">Submit</button>
         </form>
