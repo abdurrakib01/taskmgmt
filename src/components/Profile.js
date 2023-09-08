@@ -10,7 +10,7 @@ export default function Profile(){
     const [contents, setContents] = useState([]);
     const {access_token} = getToken()
     var fetching=()=>{
-        axios.get('http://127.0.0.1:8000/api/user/userinfo/',{
+        axios.get('https://taskapi-8fhe.onrender.com/api/user/userinfo/',{
             headers: {
                 'Content-Type': "application/json",
                 'authorization' : `Bearer ${access_token}`,

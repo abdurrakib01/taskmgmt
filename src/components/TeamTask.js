@@ -8,7 +8,7 @@ export default function TeamTask(props){
     const [teamTask, setTeamTask] = useState({})
     var fetching=async ()=>{
         console.log(props.id)
-        await axios.get(`http://127.0.0.1:8000/teams/${props.team.id}/`,{
+        await axios.get(`https://taskapi-8fhe.onrender.com/teams/${props.team.id}/`,{
             headers: {
                 'Content-Type': "application/json",
                 'authorization' : `Bearer ${access_token}`,

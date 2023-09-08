@@ -27,7 +27,7 @@ export default function Signup(){
             username : user.username,
             password : user.password,
         }
-        await axios.post('http://127.0.0.1:8000/api/user/login/', user_data)
+        await axios.post('https://taskapi-8fhe.onrender.com/api/user/login/', user_data)
         .then(res=>{
             storeToken(res.data.token)
             navigate('/');

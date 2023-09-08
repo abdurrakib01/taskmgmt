@@ -15,7 +15,7 @@ export default function Home(){
         setTeamId(value);
     }
     var fetching=async ()=>{
-        await axios.get('http://127.0.0.1:8000/teams/',{
+        await axios.get('https://taskapi-8fhe.onrender.com/teams/',{
             headers: {
                 'Content-Type': "application/json",
                 'authorization' : `Bearer ${access_token}`,

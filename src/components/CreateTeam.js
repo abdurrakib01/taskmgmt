@@ -3,7 +3,6 @@ import "../styles/auth.css";
 import { Select } from "antd";
 import axios from "axios";
 import { getToken } from "../db/LocalStorageService";
-import { ColorFactory } from "antd/es/color-picker/color";
 
 export default function EditProfile(){
     const [userList, setUserList] = useState([])
@@ -13,7 +12,7 @@ export default function EditProfile(){
     })
     const {access_token} = getToken()
     var fetching=()=>{
-        axios.get('http://127.0.0.1:8000/api/user/userlist/',{
+        axios.get('https://taskapi-8fhe.onrender.com/api/user/userlist/',{
             headers: {
                 'Content-Type': "application/json",
                 'authorization' : `Bearer ${access_token}`,
@@ -47,7 +46,7 @@ export default function EditProfile(){
             name : team.name,
             teams : team.teams,
         }
-        await axios.post('http://127.0.0.1:8000/teams/', data, {
+        await axios.post('https://taskapi-8fhe.onrender.com/teams/', data, {
             headers: {
                 'content-Type': "application/json",
                 'authorization' : `Bearer ${access_token}`,

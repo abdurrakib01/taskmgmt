@@ -42,7 +42,7 @@ export default function AddTask(props){
             assign : taskData.assign
         }
         e.preventDefault()
-        await axios.post(`http://127.0.0.1:8000/teams/${team.id}/`, data, {
+        await axios.post(`https://taskapi-8fhe.onrender.com/teams/${team.id}/`, data, {
             headers: {
                 'content-Type': "application/json",
                 'authorization' : `Bearer ${access_token}`,

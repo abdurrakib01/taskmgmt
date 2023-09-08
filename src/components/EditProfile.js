@@ -32,7 +32,7 @@ export default function EditProfile(props){
             data.append("image", userinfo.image, userinfo.image.name)
         };
         data.append("bio", userinfo.bio)
-        await axios.patch('http://127.0.0.1:8000/api/user/userinfo/', data, {
+        await axios.patch('https://taskapi-8fhe.onrender.com/api/user/userinfo/', data, {
             headers: {
                 'content-Type': "multipart/form-data",
                 'authorization' : `Bearer ${access_token}`,
