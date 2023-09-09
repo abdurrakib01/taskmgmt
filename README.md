@@ -1,3 +1,6 @@
+# Message
+To built this project i use django to create RESTApi and for database i used SQlite, Unfortunately, I regret to inform you that I am not be able to complete (task update, task delete and search) the project within the timeframe. The reason is that I am currently doing an software engineer intern and I have an another urgent and high-priority task that i have to complete it befor Friday. For these reason i get a very limited time to complete the project. I would appreciate your understanding and support during this challenging time.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
